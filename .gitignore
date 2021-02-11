@@ -230,3 +230,4 @@ migrations/
 # db
 *.db
 
+posts/posts/test.md
