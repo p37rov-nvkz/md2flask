@@ -1,12 +1,14 @@
 from flask import Blueprint
 from flask import render_template
-from flask_misaka import markdown
-from flask_misaka import Misaka
+
 
 
 posts = Blueprint('posts', __name__, template_folder='templates')
-Misaka(posts)
+
 
 @posts.route('/')
 def index():
-    return "Blueprint Posts"
+    file = open("posts/posts/test.md","r")
+    mdf = file.read()
+    
+    return render_template("post.html", mdf = mdf)
